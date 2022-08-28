@@ -1,0 +1,13 @@
+
+BASE                = "https://saturn.live"
+SOCKET_AUTH         = BASE + "/socket/prod/auth"
+REFRESH_AUTH        = BASE + "/refresh/prod/auth"
+AMP_EVENT           = BASE + "/_amp_event"
+API_BASE            = BASE + "/backend/prod/api/v2"
+ME                  = API_BASE + "/user/me"
+ACQUIRE             = BASE + "/backend/prod/api/v3/auth/remote/acquire"
+SCHOOL_BASE         = API_BASE + "/schools/{school_id}"
+SCHOOL_USERS        = SCHOOL_BASE + "/users"
+SCHOOL_COURSES      = SCHOOL_BASE + "/courses"
+SCHOOL_STAFF        = SCHOOL_BASE + "/staff"
+SCHOOL_CALENDAR     = SCHOOL_BASE + "/calendar"
