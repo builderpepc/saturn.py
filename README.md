@@ -1,9 +1,26 @@
 # saturn.py
+> ### **:warning: Please make sure you have read and understood the [disclaimer](#disclaimer) before installing or using this library.**
 An async Python API wrapper for [Saturn](https://www.joinsaturn.com/)'s unofficial API, featuring a simple Pythonic syntax and more. Influenced in part by the great [discord.py](https://github.com/Rapptz/discord.py/).
 
-> **:warning: Please make sure you have read and understood the [disclaimer](#disclaimer) before installing or using this library.**
+This project is currently still a work in progress and is **not yet installable**.
 
-This project is currently still a work in progress and is not yet installable.
+```py
+from saturn import Client
+
+bot = Client("my_access_token", "my_refresh_token")
+
+@bot.on("start")
+async def on_start():
+    print("Saturn bot started")
+
+@bot.on("ready")
+async def on_ready():
+    print("Connected successfully")
+    print("Account name: " + bot.user.name)
+    print("Account created at: " + str(bot.user.created_at))
+
+bot.run()
+```
 
 ## What is Saturn?
 [Saturn](https://www.joinsaturn.com/) is a mobile app that allows high school students to submit their class schedules and automatically be placed in group chats for their classes, among other related features. 
