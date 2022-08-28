@@ -119,23 +119,3 @@ class Client:
             self.event_handlers[event].append(func)
             return func
         return ret
-
-if __name__ == '__main__':
-    from rich import print
-
-    bot = Client(
-        '***REMOVED***',
-        '***REMOVED***'
-    )
-
-    @bot.on("start")
-    async def on_start():
-        print("Saturn bot started")
-
-    @bot.on("ready")
-    async def on_ready():
-        print("Connected successfully")
-        print("Name: " + bot.user.name)
-        print("Created at: " + str(bot.user.created_at))
-
-    bot.run()
