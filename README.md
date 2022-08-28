@@ -14,7 +14,7 @@ Given that saturn.py does not use an official API, the library may at times brea
 # Disclaimer
 Use of this library may violate Saturn's [Terms of Use](https://www.joinsaturn.com/terms-of-use) and other Saturn guidelines.
 
-This library is solely intended as a proof of concept.
+This library is solely intended as a proof of concept. Its developers are not affiliated in any way with Saturn and this project has not been authorized by said company.
 
 The developers of this library will not be held responsible for your actions or any resulting consequences if you use this library.
 
