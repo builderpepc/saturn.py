@@ -7,6 +7,7 @@ import json
 
 import endpoints
 from models import User, ClientUser
+from utils import UserCache
 
 class Client:
     def __init__(self, access_token: str, refresh_token: str, token_refresh_interval: Union[datetime.timedelta, float, int] = datetime.timedelta(hours=2)):
@@ -35,7 +36,12 @@ class Client:
 
         self.user: Optional[ClientUser] = None
         self.event_handlers['token_refresh'].append(self.fetch_self)
-    
+
+        self._user_cache: UserCache = UserCache(self)
+
+    @property
+    def ready(self) -> bool:
+        return self._ready_dispatched
 
     @property
     def access_token(self) -> str:
@@ -71,6 +77,11 @@ class Client:
         while not self.loop.is_closed():
             await self.request_refresh_token()
             await asyncio.sleep(self.token_refresh_interval)
+
+    async def user_cache_update_cycle(self):
+        while not self.loop.is_closed():
+            self._user_cache.update(await self._request(endpoints.SCHOOL_USERS.format(school=self.user.school_id)))
+            await asyncio.sleep(30)
 
     async def request_refresh_token(self):
         self._logger.debug("Attempting token refresh.")
