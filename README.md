@@ -1,3 +1,6 @@
+# :warning: This project is no longer maintained as I am currently working on more important projects. Please contact me if you'd like to continue it.
+(I still have a ton of unpushed changes lying around)
+
 # saturn.py
 > ### **:warning: Please make sure you have read and understood the [disclaimer](#disclaimer) before installing or using this library.**
 An async Python API wrapper for [Saturn](https://www.joinsaturn.com/)'s unofficial API, featuring a simple Pythonic syntax and more. Influenced in part by the great [discord.py](https://github.com/Rapptz/discord.py/).
